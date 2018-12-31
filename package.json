@@ -1,0 +1,33 @@
+{
+  "name": "flixinfo",
+  "version": "1.0.0",
+  "description": "Get movie detail with netflix id",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbilketay/flixinfo.git"
+  },
+  "keywords": [
+    "netflix",
+    "movieinfo",
+    "movie",
+    "tvseries"
+  ],
+  "author": "wisecolt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbilketay/flixinfo/issues"
+  },
+  "homepage": "https://github.com/sbilketay/flixinfo#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0"
+  }
+}
