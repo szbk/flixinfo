@@ -1,1 +1,1 @@
-module.exports = require('./lib/flixinfo');
+module.exports = require('./lib');
