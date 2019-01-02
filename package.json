@@ -1,6 +1,6 @@
 {
   "name": "flixinfo",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Get movie detail with netflix id",
   "main": "index.js",
   "directories": {
