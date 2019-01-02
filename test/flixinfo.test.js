@@ -23,7 +23,7 @@ describe('Flix Info', () => {
 
                 flixinfoWrongApiKey.getInfo(70143836, (result) => {
                     result.should.have.property('error').equal(1);
-                    result.should.have.property('errorMsg').equal('tmdb wrong api key error');
+                    result.should.have.property('errorMsg').equal('tmdb find id wrong api key error');
                     done();
                 });
             });
@@ -35,21 +35,42 @@ describe('Flix Info', () => {
         const flixinfo = new GetFlix('f29e56ff85f361ff01b5c5403a343021');
 
         context('Return result infos', () => {
-            it('- return right result', (done) => {
-                flixinfo.getInfo(70143836, (result) => {
+            // Movie test
+            it('- movies return right result', (done) => {
+                flixinfo.getInfo(60033299, (result) => {
                     result.should.have.property('result').equal(1);
                     result.should.have.property('error').equal(0);
-                    result.should.have.property('originalName').equal('Breaking Bad');
-                    result.should.have.property('name').equal('Breaking Bad');
-                    result.should.have.property('year').equal('2008-01-20');
-                    result.should.have.property('poster').equal('https://image.tmdb.org/t/p/original//1yeVJox3rjo2jBKrrihIMj7uoS9.jpg');
-                    result.should.have.property('backdrop').equal('https://image.tmdb.org/t/p/original//eSzpy96DwBujGFj0xMbXBcGcfxX.jpg');
-                    result.should.have.property('country').equal('US');
-                    result.should.have.property('rate').to.not.be.null
-                    result.should.have.property('overviewEN').to.not.be.null
+                    result.should.have.property('details').have.property('original_title').equal('The Butterfly Effect');
+                    result.should.have.property('details').have.property('title').equal('The Butterfly Effect');
+                    result.should.have.property('details').have.property('release_date').equal('2004-01-22');
+                    result.should.have.property('details').have.property('poster_path').equal('/3PAQy3CyNNJPES772OFMx47lFEE.jpg');
+                    result.should.have.property('details').have.property('backdrop_path').equal('/zXTUrm0BIrrZn3nEhybg0hlY275.jpg');
+                    result.should.have.property('details').have.property('id').equal(1954);
+                    result.should.have.property('details').have.property('imdb_id').equal('tt0289879');
+                    result.should.have.property('details').have.property('original_language').equal('en');
+                    result.should.have.property('credits').have.property('id').equal(1954);
+                    result.should.have.property('images').have.property('id').equal(1954);
                     done();
                 });
             });
+            // Tv test
+            it('- tv series return right result', (done) => {
+                flixinfo.getInfo(80099656, (result) => {
+                    result.should.have.property('result').equal(1);
+                    result.should.have.property('error').equal(0);
+                    result.should.have.property('details').have.property('original_name').equal('Frontier');
+                    result.should.have.property('details').have.property('name').equal('Frontier');
+                    result.should.have.property('details').have.property('first_air_date').equal('2016-11-06');
+                    result.should.have.property('details').have.property('poster_path').equal('/mhIeCeYgG4WJHNzaw2EyRpvmGX8.jpg');
+                    result.should.have.property('details').have.property('backdrop_path').equal('/hDYEGNX6CADoCqhyBbe2Qu7rKVG.jpg');
+                    result.should.have.property('details').have.property('id').equal(64555);
+                    result.should.have.property('details').have.property('original_language').equal('en');
+                    result.should.have.property('credits').have.property('id').equal(64555);
+                    result.should.have.property('images').have.property('id').equal(64555);
+                    done();
+                });
+            });
+
             it('- return empty result', (done) => {
                 flixinfo.getInfo(23424, (result) => {
                     result.should.have.property('error').equal(0);
