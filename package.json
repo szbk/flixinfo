@@ -27,7 +27,6 @@
   },
   "homepage": "https://github.com/sbilketay/flixinfo#readme",
   "dependencies": {
-    "chai-as-promised": "^7.1.1",
     "cheerio": "^1.0.0-rc.2",
     "nodemon": "^1.19.4",
     "request": "^2.88.0"
