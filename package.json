@@ -1,6 +1,6 @@
 {
   "name": "flixinfo",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Get movie detail with netflix id",
   "main": "index.js",
   "directories": {
@@ -27,8 +27,9 @@
   },
   "homepage": "https://github.com/sbilketay/flixinfo#readme",
   "dependencies": {
+    "chai-as-promised": "^7.1.1",
     "cheerio": "^1.0.0-rc.2",
-    "nodemon": "^1.18.9",
+    "nodemon": "^1.19.4",
     "request": "^2.88.0"
   },
   "devDependencies": {
