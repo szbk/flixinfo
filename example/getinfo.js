@@ -1,16 +1,18 @@
 const GetFlix = require('../index');
 
-try {
-    const getflix = new GetFlix('f29e56ff85f361ff01b5c5403a343021');
-    getflix.getInfo('80040119', (res) => {
-        if (res.error) {
-            console.log(res.errorMsg);
+const getflix = new GetFlix('d9d6007d1bcf12043db5a085ae3e5bbb');
+const getInfo = async () => {
+    try {
+        const info = await getflix.getInfo('802329261');
+        if(info == null) {
+            console.log('null');
+            
         }
-        else {
-            console.log(res);
-        }
-    })
+
+    } catch (error) {
+        // console.log(error);
+    }
 }
-catch (error) {
-    console.log(error.message)
-}
+
+getInfo();
+
