@@ -21,7 +21,7 @@ describe('Flix Info', () => {
 
                 const flixinfoWrongApiKey = new GetFlix('sfs345k34jlkdflgkjdfglk435j345klj');
 
-                flixinfoWrongApiKey.get(70143836)
+                flixinfoWrongApiKey.getInfo(70143836)
                     .catch(result => {
                         result.should.have.property('error').equal(1);
                         result.should.have.property('errorMsg').equal('tmdb find id wrong api key error');
@@ -32,14 +32,14 @@ describe('Flix Info', () => {
         });
     });
 
-    describe('#get()', () => {
+    describe('#getInfo()', () => {
 
         const flixinfo = new GetFlix('d9d6007d1bcf12043db5a085ae3e5bbb');
 
         context('Return result infos', () => {
             // Movie test
             it('- movies return right result', (done) => {
-                flixinfo.get(70131314)
+                flixinfo.getInfo(70131314)
                     .then(result => {
                         result.should.have.property('result').equal(1);
                         result.should.have.property('error').equal(0);
@@ -58,7 +58,7 @@ describe('Flix Info', () => {
             });
             // // Tv test
             it('- tv series return right result', (done) => {
-                flixinfo.get(80232926)
+                flixinfo.getInfo(80232926)
                     .then(result => {
                         result.should.have.property('result').equal(1);
                         result.should.have.property('error').equal(0);
@@ -76,7 +76,7 @@ describe('Flix Info', () => {
             });
 
             it('- return empty result', (done) => {
-                flixinfo.get(70143836)
+                flixinfo.getInfo(70143836)
                     .then(result => {
                         result.should.have.property('error').equal(0);
                         done();
@@ -84,7 +84,7 @@ describe('Flix Info', () => {
             });
             it('- flixable.com and tmdb.com connection error', (done) => {
                 nock.disableNetConnect(); //Prevents making request external connection
-                flixinfo.get(70143836)
+                flixinfo.getInfo(70143836)
                     .catch(result => {
                         result.should.have.property('error').equal(1);
                         result.should.have.property('errorMsg');
