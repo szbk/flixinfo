@@ -19,7 +19,7 @@ describe('Flix Info', () => {
         context('Api Key is wrong', () => {
             it('- wrong tmdb api key error', (done) => {
 
-                const flixinfoWrongApiKey = new GetFlix('sfs345k34jlkdflgkjdfglk435j345klj');
+                const flixinfoWrongApiKey = new GetFlix('FAKE API KEY');
 
                 flixinfoWrongApiKey.get(70143836)
                     .catch(result => {
@@ -34,7 +34,7 @@ describe('Flix Info', () => {
 
     describe('#get()', () => {
 
-        const flixinfo = new GetFlix('d9d6007d1bcf12043db5a085ae3e5bbb');
+        const flixinfo = new GetFlix('YOUR API KEY');
 
         context('Return result infos', () => {
             // Movie test
