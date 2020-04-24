@@ -1,6 +1,6 @@
 var config = {
   // Filexible URL
-  filexibleURL: 'https://flixable.com/title/',
+  filexibleURL: 'https://tr.flixable.com/title/',
   // Tmdb URL
   theMovieDbURL: 'https://api.themoviedb.org/3/',
   // Tmdb image URL
